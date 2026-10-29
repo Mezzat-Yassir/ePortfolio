@@ -93,17 +93,15 @@
     </div>
   </section>
 
-  <!-- 02 · Home — A little more about me (video placeholder) -->
+  <!-- 02 · Home — A little more about me (video) -->
   <section class="page s2" id="more" data-page="2" data-nav="home" data-sub="">
     <div class="page-inner">
       <h2 class="s2-title">A little more about me</h2>
       <span class="bar s2-bar" aria-hidden="true"></span>
-      <!-- VIDEO: when your video is ready, replace the <svg class="play"> below with either
-             <video src="assets/video/your-video.mp4" controls playsinline preload="metadata"></video>
-           or a YouTube / Google Drive <iframe src="..." allowfullscreen></iframe>,
-           and remove role="img" and aria-label="Video placeholder" from this div. -->
-      <div class="card video-frame s2-video" role="img" aria-label="Video placeholder">
-        <svg class="play" viewBox="0 0 95.1 95.1" aria-hidden="true"><circle cx="47.55" cy="47.55" r="47.55" fill="#432f79"/><path fill="#fff" d="M36.4 28.56V67.34L66.87 47.95Z"/></svg>
+      <!-- To change the video, replace assets/video/eportfolio.mp4 (and its cover image assets/img/video-poster.webp). -->
+      <div class="card video-frame s2-video">
+        <video class="vid" src="assets/video/eportfolio.mp4" poster="assets/img/video-poster.webp" preload="none" playsinline aria-label="A little more about me — video"></video>
+        <button class="play-btn" type="button" aria-label="Play video"><svg class="play-tri" viewBox="0 0 30.47 38.78" aria-hidden="true" focusable="false"><path d="M0 0V38.78L30.47 19.39Z"/></svg></button>
       </div>
     </div>
   </section>

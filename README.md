@@ -13,16 +13,15 @@ scroll through it, or use the sidebar tabs to jump to a section.
 | `assets/css/style.css` | Styles (desktop layout follows the original 1440 × 810 design; phones and tablets get a stacked layout) |
 | `assets/js/main.js` | Tabs, smooth scrolling, sticky header, mobile menu |
 | `assets/img/`, `assets/svg/` | Photos, logos and icons taken from the design |
+| `assets/video/` | The "A little more about me" video |
 | `assets/fonts/` | Free web fonts standing in for Aptos (Hanken Grotesk), The Seasons (Newsreader) and Times New Roman MT Pro (Tinos) |
 
-## Adding the video (section "A little more about me")
+## The video (section "A little more about me")
 
-1. Either upload the file to `assets/video/` (keep it well under GitHub's 100 MB limit) or upload it to YouTube / Google Drive.
-2. In `index.html`, find the comment that starts with `VIDEO:` and replace the `<svg class="play">…</svg>` element below it with:
-   - a file: `<video src="assets/video/your-video.mp4" controls playsinline preload="metadata"></video>`
-   - or an embed: `<iframe src="EMBED-LINK" allowfullscreen></iframe>`
-3. On the same `<div class="card video-frame …">`, remove `role="img"` and `aria-label="Video placeholder"`.
+The video is `assets/video/eportfolio.mp4` and its cover image is `assets/img/video-poster.webp`.
+Visitors start it with the triangle in the middle of the frame; the usual player controls appear once it plays.
 
-The video automatically fills the rounded frame.
+To swap in a new video, replace those two files with new ones under the same names (keep the video well under
+GitHub's 100 MB file limit).
 
 Pushing to the `main` branch republishes the site within a minute or two.

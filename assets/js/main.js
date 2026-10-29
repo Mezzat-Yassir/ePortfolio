@@ -186,6 +186,25 @@
     sections.forEach(function (s) { io.observe(s); });
   }
 
+  /* ---------- video: triangle starts playback, native controls take over ---------- */
+  var videoFrame = document.querySelector('.video-frame');
+  var video = videoFrame && videoFrame.querySelector('video');
+  var playBtn = videoFrame && videoFrame.querySelector('.play-btn');
+  if (video && playBtn) {
+    playBtn.addEventListener('click', function () {
+      if (!video.hasAttribute('controls')) video.setAttribute('controls', '');
+      videoFrame.classList.add('has-played');
+      var started = video.play();
+      if (started && typeof started.catch === 'function') {
+        started.catch(function () { videoFrame.classList.remove('is-playing'); });
+      }
+      try { video.focus({ preventScroll: true }); } catch (err) { /* older browsers */ }
+    });
+    video.addEventListener('play', function () { videoFrame.classList.add('is-playing'); });
+    video.addEventListener('pause', function () { videoFrame.classList.remove('is-playing'); });
+    video.addEventListener('ended', function () { videoFrame.classList.remove('is-playing'); });
+  }
+
   /* ---------- init ---------- */
   function refresh() {
     measureUnit();

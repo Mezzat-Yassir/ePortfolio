@@ -129,9 +129,20 @@ em{font-style:italic}
   transform-origin:left}
 .i-arrow{display:inline-block;width:calc(7.06 * var(--u));height:calc(7.05 * var(--u));
   vertical-align:calc(2.36 * var(--u));fill:currentColor}
-.video-frame{display:block;overflow:hidden}
+.video-frame{display:block;overflow:hidden;isolation:isolate}
 .video-frame video,.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;object-fit:cover;background:#0d0817}
-.play{width:100%;height:100%}
+/* play control: a plain white triangle centred on the video (light tint keeps it readable on the bright cover) */
+.play-btn{position:absolute;inset:0;z-index:1;display:grid;place-items:center;margin:0;padding:0;border:0;
+  border-radius:inherit;background:rgba(17,10,28,.3);color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:opacity .35s ease,background-color .35s ease}
+.play-btn:hover{background:rgba(17,10,28,.16)}
+.play-btn:focus-visible{outline:2px solid var(--accent);outline-offset:-8px}
+.play-tri{width:var(--tri);height:auto;fill:currentColor;overflow:visible;transform:translateX(calc(var(--tri) / 6));
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.45));transition:transform .35s var(--ease)}
+.play-btn:hover .play-tri,.play-btn:focus-visible .play-tri{transform:translateX(calc(var(--tri) / 6)) scale(1.1)}
+.video-frame.is-playing .play-btn{opacity:0;pointer-events:none}
+.video-frame.has-played .play-btn{inset:auto;left:50%;top:50%;width:calc(var(--tri) * 2.6);height:calc(var(--tri) * 2.6);
+  transform:translate(-50%,-50%);background:transparent;border-radius:50%}
 .tl-node::before,.tl-node::after{content:"";position:absolute}
 .tl-node::before{background:url("../img/timeline-glow.png") center/100% 100% no-repeat}
 .tl-node::after{inset:0;border-radius:50%;background:var(--accent)}
@@ -199,7 +210,7 @@ em{font-style:italic}
   .s11{height:max(calc(522.3 * var(--u)),calc(100vh - 128.7 * var(--u)))}
   .contact-wrap{position:absolute;left:0;width:100%}
 
-  .s1-kicker,.s1-bar,.s1-title,.s1-text,.s1-meta,.s2-title,.s2-bar,.card,.play,
+  .s1-kicker,.s1-bar,.s1-title,.s1-text,.s1-meta,.s2-title,.s2-bar,.card,
   .edu-kicker,.edu-bar,.edu-line,.tl-node,.tl-years,.tl-school,.tl-degree,.tl-place,
   .sk-title,.sk-rule,.sk-n,.sk-ic,.pj-num,.pj-title,.pj-sub,.pj-desc,.pj-tags,.pj-media,
   .shop,.lessons-title,.ls-num,.ls-title,.ls-text,.mob-bar,.mob-title,.mob-sub,.mob-text,.mob-tags,
@@ -213,7 +224,7 @@ em{font-style:italic}
   .m-dot,.m2{position:absolute;top:0}
   .shop-link{position:absolute;top:0;left:calc(82.4 * var(--u))}
   .pj-media,.eg-media{border-radius:calc(30 * var(--u))}
-  .s2-video{border-radius:calc(31.05 * var(--u))}
+  .s2-video{border-radius:calc(31.05 * var(--u));--tri:calc(40 * var(--u))}
 
   a.card{transition:border-color .35s ease,transform .45s var(--ease),box-shadow .45s var(--ease)}
   a.card:hover{border-color:#5d4686;transform:translateY(calc(-3 * var(--u)));
@@ -277,7 +288,6 @@ body[data-nav="contact"] .nav-indicator{transform:translateY(calc(502.29 * var(-
 .s2-title{left:calc(257.6 * var(--u));top:calc(59.19 * var(--u));font-size:calc(28 * var(--u));line-height:calc(36.4 * var(--u))}
 .s2-bar{left:calc(257.6 * var(--u));top:calc(104.4 * var(--u));width:calc(54 * var(--u));height:calc(3.8 * var(--u))}
 .s2-video{left:calc(229.55 * var(--u));top:calc(131.95 * var(--u));width:calc(706.1 * var(--u));height:calc(440.6 * var(--u));border-radius:calc(31.05 * var(--u))}
-.s2-video .play{left:calc(303.35 * var(--u));top:calc(170.65 * var(--u));width:calc(95.1 * var(--u));height:calc(95.1 * var(--u))}
 .s3{height:calc(681.3 * var(--u))}
 .edu{left:calc(163.05 * var(--u));top:calc(59.65 * var(--u));width:calc(858.4 * var(--u));height:calc(557.1 * var(--u));border-radius:calc(93.55 * var(--u))}
 .edu-kicker{left:calc(57.05 * var(--u));top:calc(26.04 * var(--u));font-size:calc(18.35 * var(--u));line-height:calc(23.86 * var(--u))}
@@ -558,7 +568,7 @@ body[data-nav="contact"] .nav-indicator{transform:translateY(calc(502.29 * var(-
   .s2-title{font-size:22px;line-height:1.25}
   .s2-bar{margin-top:10px}
   .video-frame{margin-top:22px;position:relative;aspect-ratio:704/438.5;border-radius:24px;border-width:2px;display:grid;place-items:center}
-  .play{width:clamp(60px,16vw,86px);height:auto}
+  .video-frame{--tri:30px}
 
   .card{border-width:2px}
   .edu{position:relative;border-radius:36px;padding:30px 22px 32px}
