@@ -15,29 +15,27 @@
   var sections = Array.prototype.slice.call(document.querySelectorAll('.page'));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
   var subtitleEls = Array.prototype.slice.call(document.querySelectorAll('[data-subtitle]'));
-  var pagerEl = document.querySelector('[data-pager]');
   var menuBtn = document.querySelector('.mbar-menu');
   var scrim = document.querySelector('.scrim');
   var first = document.querySelector('.h-first');
+  var last = document.querySelector('.h-last');
 
   var u = 1;
   var hp = -1;
   var current = null;
   var ticking = false;
 
-  /* ---------- scale unit: 1 design point = u CSS px ---------- */
+  /* ---------- scale unit: 1 design point = u CSS px (0.74px to 0.9px) ---------- */
   function measureUnit() {
-    u = Math.min(root.clientWidth / 1440, 1.32);
+    u = Math.min(Math.max(root.clientWidth / 1700, 0.74), 0.9);
     root.style.setProperty('--u', u + 'px');
   }
 
   /* Where "Mezzat" lands when the header condenses (depends on the rendered width of the first name). */
   function measureNameShift() {
-    if (!first) return;
-    var w = first.offsetWidth;                       // untransformed width
-    var targetX = (289.4 - 241) * u + w * (40.99 / 42) + 5.9 * u;
-    var startX = (289.1 - 241) * u;
-    root.style.setProperty('--last-dx', (targetX - startX).toFixed(2) + 'px');
+    if (!first || !last) return;
+    var targetX = first.offsetLeft + first.offsetWidth * (40.99 / 42) + 5.9 * u;   // untransformed boxes
+    root.style.setProperty('--last-dx', (targetX - last.offsetLeft).toFixed(2) + 'px');
   }
 
   function headerBottom() {
@@ -89,32 +87,17 @@
     });
   }
 
-  function setPager(n) {
-    if (!pagerEl) return;
-    var label = (n < 10 ? '0' : '') + n;
-    if (pagerEl.textContent === label) return;
-    if (reducedMQ.matches) { pagerEl.textContent = label; return; }
-    pagerEl.style.opacity = '0';
-    window.setTimeout(function () {
-      pagerEl.textContent = label;
-      pagerEl.style.opacity = '';
-    }, 160);
-  }
-
   function activate(section) {
     if (section === current) return;
     current = section;
     var nav = section.getAttribute('data-nav');
-    var page = parseInt(section.getAttribute('data-page'), 10);
     body.setAttribute('data-nav', nav);
-    body.setAttribute('data-page', String(page));
     navLinks.forEach(function (a) {
       var on = a.getAttribute('data-nav-link') === nav;
       a.classList.toggle('is-active', on);
       if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
     });
     setSubtitle(section.getAttribute('data-sub') || '');
-    setPager(page);
   }
 
   function onScroll() {
@@ -151,6 +134,8 @@
     if (id === 'content') return;   // skip link keeps its default behaviour
     e.preventDefault();
     closeMenu();
+    // a mouse click shouldn't leave focus inside the sidebar (it would keep it slid out)
+    if (e.detail > 0 && a.closest('.sidebar') && typeof a.blur === 'function') a.blur();
     goTo(id, true);
     if (history.replaceState) history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
   });

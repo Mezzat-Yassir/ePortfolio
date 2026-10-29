@@ -18,16 +18,10 @@
 <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/newsreader-display.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
-<script>(function(d){d.classList.add('js');function s(){d.style.setProperty('--u',Math.min(d.clientWidth/1440,1.32)+'px')}s();addEventListener('resize',s)})(document.documentElement);</script>
+<script>(function(d){d.classList.add('js');function s(){d.style.setProperty('--u',Math.min(Math.max(d.clientWidth/1700,.74),.9)+'px')}s();addEventListener('resize',s)})(document.documentElement);</script>
 </head>
-<body data-page="1" data-nav="home">
+<body data-nav="home">
 <a class="skip-link" href="#content">Skip to content</a>
-
-<!-- Decorative dot field (fixed behind the content) -->
-<div class="backdrop" aria-hidden="true">
-  <img class="dots dots-right" src="assets/svg/dots-right.svg" alt="" width="355" height="376">
-  <img class="dots dots-left" src="assets/svg/dots-left.svg" alt="" width="355" height="375">
-</div>
 
 <!-- Mobile top bar -->
 <div class="mbar">
@@ -41,9 +35,9 @@
   </button>
 </div>
 
-<!-- Sidebar -->
+<!-- Sidebar: a slim icon rail that slides out with the section names on hover -->
 <aside class="sidebar" id="sidebar" aria-label="Site navigation">
-  <a class="brand" href="#home" data-nav-link="home">
+  <a class="brand" href="#home" data-nav-link="home" aria-label="Mohamed Yassir Mezzat — back to top">
     <span class="brand-mark">MY</span>
     <span class="brand-name">MEZZAT<br>MOHAMED<br>YASSIR</span>
   </a>
@@ -59,14 +53,10 @@
     <a class="nav-item n-activities" href="#activities" data-nav-link="activities"><span class="nav-icon"><svg class="i-nav-activities" aria-hidden="true" focusable="false" viewBox="0 0 14.85 17.7"><path fill="currentColor" d="M14.41 8.45C14.38 8.51 14.29 8.48 14.3 8.42C14.41 7.74 14.21 7.04 13.75 6.51C13.42 6.14 12.99 5.89 12.54 5.7C11.89 5.42 11.18 5.23 10.46 5.27C10.34 5.28 10.23 5.31 10.11 5.31C10.06 5.32 10.05 5.32 10.05 5.3L7.91 15.32C7.59 16.84 5.63 17.7 3.53 17.26C1.44 16.81 0 15.22 0.32 13.7C0.65 12.19 2.61 11.32 4.7 11.77C5.47 11.93 6.14 12.25 6.68 12.65C6.71 12.68 6.76 12.66 6.77 12.62L9.38 0.37C9.43 0.14 9.65 0 9.87 0.05L10.76 0.24C10.92 0.27 11.03 0.4 11.04 0.55C11.44 2.05 12.85 2.92 13.87 3.98C14.47 4.61 14.8 5.43 14.83 6.3C14.85 6.98 14.72 7.8 14.41 8.45"/></svg></span><span class="nav-label">Activities</span></a>
     <a class="nav-item n-contact" href="#contact" data-nav-link="contact"><span class="nav-icon"><svg class="i-nav-contact" aria-hidden="true" focusable="false" viewBox="0 0 14.20 13.88"><path fill="currentColor" d="M7.22 13.88Q5.09 13.88 3.46 13.03Q1.83 12.18 0.92 10.62Q0 9.06 0 6.94Q0 5.36 0.52 4.09Q1.05 2.81 2.01 1.89Q2.98 0.98 4.27 0.49Q5.57 0 7.12 0Q8.73 0 10.03 0.5Q11.33 1.01 12.27 1.92Q13.21 2.83 13.7 4.06Q14.2 5.29 14.2 6.75Q14.2 8.13 13.8 8.97Q13.4 9.8 12.74 10.18Q12.07 10.55 11.28 10.55Q10.44 10.55 9.88 10.2Q9.32 9.85 9.14 9.13Q8.86 9.74 8.22 10.15Q7.58 10.55 6.71 10.55Q5.73 10.55 5.03 10.11Q4.34 9.66 3.97 8.87Q3.61 8.07 3.61 7.01Q3.61 5.94 4 5.15Q4.38 4.36 5.1 3.93Q5.82 3.49 6.79 3.49Q7.58 3.49 8.14 3.82Q8.71 4.14 8.96 4.58L9.02 3.6H10.36V8.34Q10.36 8.94 10.62 9.2Q10.89 9.45 11.4 9.45Q11.95 9.45 12.3 9.11Q12.65 8.77 12.82 8.17Q13 7.56 13 6.77Q13 5.04 12.25 3.76Q11.51 2.48 10.18 1.77Q8.86 1.07 7.12 1.07Q5.38 1.07 4.04 1.78Q2.71 2.5 1.96 3.82Q1.21 5.14 1.21 6.94Q1.21 8.82 1.98 10.13Q2.76 11.45 4.1 12.13Q5.45 12.82 7.17 12.82Q8.04 12.82 8.88 12.65Q9.73 12.47 10.44 12.18V13.34Q9.74 13.6 8.91 13.74Q8.08 13.88 7.22 13.88ZM6.9 9.43Q7.66 9.43 8.11 9.09Q8.57 8.76 8.76 8.2Q8.96 7.65 8.96 6.99Q8.96 6.36 8.77 5.81Q8.57 5.27 8.14 4.94Q7.7 4.61 6.98 4.61Q6.25 4.61 5.81 4.94Q5.38 5.27 5.19 5.81Q5 6.36 5 6.99Q5 7.64 5.18 8.2Q5.37 8.76 5.78 9.09Q6.2 9.43 6.9 9.43Z"/></svg></span><span class="nav-label">Contact</span></a>
   </nav>
-  <div class="pager" aria-hidden="true">
-    <span class="pager-bar"></span>
-    <span class="pager-num" data-pager>01</span>
-  </div>
 </aside>
 <div class="scrim" aria-hidden="true"></div>
 
-<!-- Header: full on the first screen, condenses into a sticky bar while scrolling -->
+<!-- Header: full on the welcome screen, condenses into a sticky bar while scrolling -->
 <header class="topbar">
   <div class="topbar-inner">
     <p class="h-eyebrow">MOHAMED YASSIR MEZZAT - ePortfolio</p>
@@ -82,266 +72,303 @@
 
 <main id="content" class="main">
 
-  <!-- 01 · Home — About me -->
-  <section class="page s1" id="home" data-page="1" data-nav="home" data-sub="">
-    <div class="page-inner">
-      <p class="s1-kicker">ABOUT ME</p>
-      <span class="bar s1-bar" aria-hidden="true"></span>
-      <h2 class="s1-title">Who I Am</h2>
-      <p class="s1-text">I am an engineering student at ENSEEIHT — Toulouse, interested in <br class="pdf">technology, problem-solving, mathematics and the way ideas <br class="pdf">become real systems.</p>
-      <p class="s1-meta"><span class="m1">ENSEEIHT</span><span class="vh">    •    </span><span class="m-dot" aria-hidden="true"></span><span class="m2">TOULOUSE,  FRANCE</span></p>
-    </div>
-  </section>
-
-  <!-- 02 · Home — A little more about me (video) -->
-  <section class="page s2" id="more" data-page="2" data-nav="home" data-sub="">
-    <div class="page-inner">
-      <h2 class="s2-title">A little more about me</h2>
-      <span class="bar s2-bar" aria-hidden="true"></span>
-      <!-- To change the video, replace assets/video/eportfolio.mp4 (and its cover image assets/img/video-poster.webp). -->
-      <div class="card video-frame s2-video">
-        <video class="vid" src="assets/video/eportfolio.mp4" poster="assets/img/video-poster.webp" preload="none" playsinline aria-label="A little more about me — video"></video>
-        <button class="play-btn" type="button" aria-label="Play video"><svg class="play-tri" viewBox="0 0 30.47 38.78" aria-hidden="true" focusable="false"><path d="M0 0V38.78L30.47 19.39Z"/></svg></button>
+  <!-- Welcome: video + Who I Am + CV / Resume / LinkedIn -->
+  <section class="page welcome-page" id="home" data-nav="home" data-sub="">
+    <div class="wrap-wide">
+      <div class="welcome">
+        <div class="w-video">
+          <h2 class="w-vtitle">A little more about me</h2>
+          <span class="bar w-vbar" aria-hidden="true"></span>
+          <!-- To change the video, replace assets/video/eportfolio.mp4 (and its cover image assets/img/video-poster.webp). -->
+          <div class="card video-frame">
+            <video class="vid" src="assets/video/eportfolio.mp4" poster="assets/img/video-poster.webp" preload="none" playsinline aria-label="A little more about me — video"></video>
+            <button class="play-btn" type="button" aria-label="Play video"><svg class="play-tri" viewBox="0 0 30.47 38.78" aria-hidden="true" focusable="false"><path d="M0 0V38.78L30.47 19.39Z"/></svg></button>
+          </div>
+        </div>
+        <div class="w-about">
+          <p class="w-kicker">ABOUT ME</p>
+          <span class="bar w-bar" aria-hidden="true"></span>
+          <h2 class="w-title">Who I Am</h2>
+          <p class="w-text">I am an engineering student at ENSEEIHT — Toulouse, interested in technology, problem-solving, mathematics and the way ideas become real systems.</p>
+          <p class="w-meta"><span class="m1">ENSEEIHT</span><span class="vh">    •    </span><span class="m-dot" aria-hidden="true"></span><span class="m2">TOULOUSE,  FRANCE</span></p>
+        </div>
+      </div>
+      <!-- CV / Resume: greyed out until the files are added (see README) -->
+      <div class="cta">
+        <button class="btn" type="button" disabled><svg class="i-nav-education" aria-hidden="true" focusable="false" viewBox="0 0 15.36 19.2"><path fill="currentColor" d="M14.93 4.87L10.5 0.44C10.21 0.16 9.84 0 9.44 0L1.5 0L1.5 0C1.1 0 0.72 0.16 0.44 0.44C0.16 0.72 0 1.1 0 1.5L0 17.71C0 18.53 0.67 19.2 1.5 19.2L13.87 19.2C14.69 19.2 15.36 18.53 15.36 17.71L15.36 5.93C15.36 5.53 15.2 5.15 14.93 4.87L14.93 4.87M14.06 5.24L10.79 5.24C10.42 5.24 10.13 4.94 10.13 4.58L10.13 1.31L14.06 5.24L14.06 5.24M13.87 18.33L1.5 18.33C1.15 18.33 0.87 18.05 0.87 17.71L0.87 1.5C0.87 1.33 0.94 1.17 1.06 1.06C1.17 0.94 1.33 0.87 1.5 0.87L1.5 0.87L9.25 0.88L9.25 4.58C9.25 5.42 9.94 6.11 10.79 6.11L14.49 6.11L14.49 17.71C14.49 18.05 14.21 18.33 13.87 18.33L13.87 18.33"/><path fill="currentColor" d="M11.67 15.06L3.69 15.06C3.45 15.06 3.25 15.25 3.25 15.49C3.25 15.74 3.45 15.93 3.69 15.93L11.67 15.93C11.91 15.93 12.11 15.74 12.11 15.49C12.11 15.25 11.91 15.06 11.67 15.06"/><path fill="currentColor" d="M11.67 11.79L3.69 11.79C3.45 11.79 3.25 11.98 3.25 12.22C3.25 12.46 3.45 12.66 3.69 12.66L11.67 12.66C11.91 12.66 12.11 12.46 12.11 12.22C12.11 11.98 11.91 11.79 11.67 11.79"/><path fill="currentColor" d="M11.67 8.51L3.69 8.51C3.45 8.51 3.25 8.71 3.25 8.95C3.25 9.19 3.45 9.39 3.69 9.39L11.67 9.39C11.91 9.39 12.11 9.19 12.11 8.95C12.11 8.71 11.91 8.51 11.67 8.51"/></svg><span>CV (Français)</span></button>
+        <button class="btn" type="button" disabled><svg class="i-nav-education" aria-hidden="true" focusable="false" viewBox="0 0 15.36 19.2"><path fill="currentColor" d="M14.93 4.87L10.5 0.44C10.21 0.16 9.84 0 9.44 0L1.5 0L1.5 0C1.1 0 0.72 0.16 0.44 0.44C0.16 0.72 0 1.1 0 1.5L0 17.71C0 18.53 0.67 19.2 1.5 19.2L13.87 19.2C14.69 19.2 15.36 18.53 15.36 17.71L15.36 5.93C15.36 5.53 15.2 5.15 14.93 4.87L14.93 4.87M14.06 5.24L10.79 5.24C10.42 5.24 10.13 4.94 10.13 4.58L10.13 1.31L14.06 5.24L14.06 5.24M13.87 18.33L1.5 18.33C1.15 18.33 0.87 18.05 0.87 17.71L0.87 1.5C0.87 1.33 0.94 1.17 1.06 1.06C1.17 0.94 1.33 0.87 1.5 0.87L1.5 0.87L9.25 0.88L9.25 4.58C9.25 5.42 9.94 6.11 10.79 6.11L14.49 6.11L14.49 17.71C14.49 18.05 14.21 18.33 13.87 18.33L13.87 18.33"/><path fill="currentColor" d="M11.67 15.06L3.69 15.06C3.45 15.06 3.25 15.25 3.25 15.49C3.25 15.74 3.45 15.93 3.69 15.93L11.67 15.93C11.91 15.93 12.11 15.74 12.11 15.49C12.11 15.25 11.91 15.06 11.67 15.06"/><path fill="currentColor" d="M11.67 11.79L3.69 11.79C3.45 11.79 3.25 11.98 3.25 12.22C3.25 12.46 3.45 12.66 3.69 12.66L11.67 12.66C11.91 12.66 12.11 12.46 12.11 12.22C12.11 11.98 11.91 11.79 11.67 11.79"/><path fill="currentColor" d="M11.67 8.51L3.69 8.51C3.45 8.51 3.25 8.71 3.25 8.95C3.25 9.19 3.45 9.39 3.69 9.39L11.67 9.39C11.91 9.39 12.11 9.19 12.11 8.95C12.11 8.71 11.91 8.51 11.67 8.51"/></svg><span>Resume (English)</span></button>
+        <a class="btn" href="https://www.linkedin.com/in/mohamed-yassir-mezzat-50272a440" target="_blank" rel="noopener noreferrer"><img class="btn-in" src="assets/img/contact-linkedin.png" alt="" width="222" height="222"><span>LinkedIn</span></a>
       </div>
     </div>
   </section>
 
-  <!-- 03 · Education -->
-  <section class="page s3" id="education" data-page="3" data-nav="education" data-sub="Education">
-    <div class="page-inner">
-      <div class="card edu">
-        <h2 class="edu-kicker">ACADEMIC PATH</h2>
-        <span class="bar edu-bar" aria-hidden="true"></span>
-        <span class="edu-line" aria-hidden="true"></span>
-        <ol class="timeline">
-          <li class="tl tl-1">
-            <span class="tl-node" aria-hidden="true"></span>
-            <span class="tl-years">2026 - 2029</span>
-            <h3 class="tl-school">ENSEEIHT  —  SN</h3>
-            <p class="tl-degree">Bachelor of Engineering  ·  Sciences du Numérique (SN)</p>
-            <p class="tl-place">Toulouse, France  ·  Sep 2026 – Jun 2029</p>
-          </li>
-          <li class="tl tl-2">
-            <span class="tl-node" aria-hidden="true"></span>
-            <span class="tl-years">2024 - 2026</span>
-            <h3 class="tl-school">CPGE — Lycée Omar Ibn Al Khattab</h3>
-            <p class="tl-degree">Undergraduate Preparatory Program · Mathematics and Physics (MPSI / MP)</p>
-            <p class="tl-place">Meknès, Morocco  ·  Sep 2024 – Jun 2026</p>
-          </li>
-          <li class="tl tl-3">
-            <span class="tl-node" aria-hidden="true"></span>
-            <span class="tl-years">2021 - 2024</span>
-            <h3 class="tl-school">Flowers High School</h3>
-            <p class="tl-degree">Scientific Baccalaureate in Mathematics · Engineering Sciences specialization</p>
-            <p class="tl-place">Meknès, Morocco · Sep 2021 – Jun 2024</p>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 · Skills & Expertise -->
-  <section class="page s4" id="skills" data-page="4" data-nav="skills" data-sub="Skills &amp; Expertise">
-    <div class="page-inner">
-      <div class="card sk sk-lang">
-        <h2 class="sk-title">Languages</h2>
-        <span class="sk-rule" aria-hidden="true"></span>
-        <ul class="sk-list">
-          <li class="sk-i i-python"><img class="sk-ic" src="assets/img/logo-python.png" alt="" width="90" height="90"><span class="sk-n">Python</span></li>
-          <li class="sk-i i-sql"><img class="sk-ic" src="assets/img/logo-sql.png" alt="" width="62" height="78"><span class="sk-n">SQL</span></li>
-          <li class="sk-i i-ada"><img class="sk-ic" src="assets/img/logo-ada.png" alt="" width="84" height="40"><span class="sk-n">ADA</span></li>
-          <li class="sk-i i-cpp"><img class="sk-ic" src="assets/img/logo-cpp.png" alt="" width="85" height="94"><span class="sk-n">C++</span></li>
-          <li class="sk-i i-latex"><img class="sk-ic" src="assets/img/logo-latex.png" alt="" width="63" height="72"><span class="sk-n">LaTeX</span></li>
-        </ul>
-      </div>
-      <div class="card sk sk-tools">
-        <h2 class="sk-title">Tools, Software &amp; Systems</h2>
-        <span class="sk-rule" aria-hidden="true"></span>
-        <ul class="sk-list">
-          <li class="sk-i i-windows"><img class="sk-ic" src="assets/img/logo-windows.png" alt="" width="71" height="78"><span class="sk-n">Windows</span></li>
-          <li class="sk-i i-linux"><img class="sk-ic" src="assets/img/logo-linux.png" alt="" width="55" height="59"><span class="sk-n">Linux</span></li>
-          <li class="sk-i i-vs"><img class="sk-ic" src="assets/img/logo-visualstudio.png" alt="" width="76" height="77"><span class="sk-n">Visual Studio</span></li>
-          <li class="sk-i i-matlab"><img class="sk-ic" src="assets/img/logo-matlab.png" alt="" width="160" height="144"><span class="sk-n">MATLAB</span></li>
-          <li class="sk-i i-numpy"><img class="sk-ic" src="assets/img/logo-numpy.png" alt="" width="107" height="115"><span class="sk-n">NumPy</span></li>
-          <li class="sk-i i-ltspice"><img class="sk-ic" src="assets/img/logo-ltspice.png" alt="" width="120" height="70"><span class="sk-n">LTspice</span></li>
-        </ul>
-      </div>
-      <div class="card sk sk-creative">
-        <h2 class="sk-title">Creative &amp; Entrepreneurial Skills</h2>
-        <span class="sk-rule" aria-hidden="true"></span>
-        <ul class="sk-list">
-          <li class="sk-i i-digital"><img class="sk-ic" src="assets/img/logo-ibispaint.png" alt="" width="60" height="60"><span class="sk-n">Digital design</span></li>
-          <li class="sk-i i-canva"><img class="sk-ic" src="assets/img/logo-canva.png" alt="" width="138" height="138"><span class="sk-n">Canva</span></li>
-          <li class="sk-i i-graphic"><img class="sk-ic" src="assets/img/logo-capcut.png" alt="" width="147" height="99"><span class="sk-n">Graphic design</span></li>
-          <li class="sk-i i-ecom"><img class="sk-ic" src="assets/img/logo-etsy.png" alt="" width="90" height="90"><span class="sk-n">E-commerce and online sales</span></li>
-          <li class="sk-i i-store"><img class="sk-ic" src="assets/img/logo-shopify.png" alt="" width="68" height="68"><span class="sk-n">Online Store Management</span></li>
-        </ul>
-      </div>
-      <div class="card sk sk-soft">
-        <h2 class="sk-title">Soft Skills</h2>
-        <span class="sk-rule" aria-hidden="true"></span>
-        <ul class="sk-list">
-          <li class="sk-i i-problem"><img class="sk-ic" src="assets/img/soft-problem.png" alt="" width="49" height="46"><span class="sk-n">Problem-solving</span></li>
-          <li class="sk-i i-adapt"><img class="sk-ic" src="assets/svg/soft-adaptability.svg" alt="" width="22" height="17"><span class="sk-n">Adaptability</span></li>
-          <li class="sk-i i-team"><img class="sk-ic" src="assets/svg/soft-teamwork.svg" alt="" width="28" height="13"><span class="sk-n">Teamwork</span></li>
-          <li class="sk-i i-lead"><img class="sk-ic" src="assets/svg/soft-leadership.svg" alt="" width="17" height="22"><span class="sk-n">Leadership</span></li>
-          <li class="sk-i i-creat"><img class="sk-ic" src="assets/svg/soft-creativity.svg" alt="" width="20" height="21"><span class="sk-n">Creativity</span></li>
-          <li class="sk-i i-anal"><img class="sk-ic" src="assets/svg/soft-analytical.svg" alt="" width="21" height="20"><span class="sk-n">Analytical thinking</span></li>
-          <li class="sk-i i-time"><img class="sk-ic" src="assets/svg/soft-time.svg" alt="" width="23" height="23"><span class="sk-n">Time management</span></li>
-          <li class="sk-i i-decide"><img class="sk-ic" src="assets/svg/soft-decision.svg" alt="" width="17" height="29"><span class="sk-n">Decision-making</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 · Projects Highlights (1/2) -->
-  <section class="page s5" id="projects" data-page="5" data-nav="projects" data-sub="Projects Highlights">
-    <div class="page-inner">
-      <a class="card pj pj-1" href="https://drive.google.com/file/d/1cJxBrXn3Jck78LgcFZlMsyAfVNfUtnCa/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-        <span class="pj-num">01.</span>
-        <h3 class="pj-title">Chaotic Systems: Dynamics &amp; Mathematical Analysis</h3>
-        <p class="pj-sub">Nonlinear Dynamics | Research Project</p>
-        <p class="pj-desc">A theoretical and numerical study of chaotic systems, focusing on their nonlinear <br class="pdf">dynamics, stability, and characteristic behaviours. <br class="pdf">Using the Chua circuit as a case study, I investigate equilibrium points, bifurcations, <br class="pdf">sensitivity to initial conditions, and the emergence of chaotic attractors through <br class="pdf">mathematical analysis and numerical simulation.</p>
-        <p class="pj-tags">Python  |  LTspice  |  Circuit Prototyping |  Experimental Validation</p>
-        <span class="pj-media"><img src="assets/img/project-chaotic-systems.webp" alt="Chua circuit double-scroll chaotic attractor displayed on an oscilloscope" width="603" height="468" loading="lazy" decoding="async"></span>
-      </a>
-      <a class="card pj pj-2" href="https://drive.google.com/file/d/1cJxBrXn3Jck78LgcFZlMsyAfVNfUtnCa/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-        <span class="pj-num">02.</span>
-        <h3 class="pj-title">Chaos-Based Encryption &amp; Secure Communications</h3>
-        <p class="pj-sub">Signal Synchronization &amp; Communication | Research Project</p>
-        <p class="pj-desc">An exploration of how chaotic dynamics can be leveraged to develop communication <br class="pdf">systems using synchronized nonlinear oscillators. <br class="pdf">Through circuit modeling and simulation, I investigate how information can be encoded <br class="pdf">into chaotic signals and recovered at the receiver, examining synchronization, signal <br class="pdf">masking, and the influence of parameter mismatch on transmission reliability.</p>
-        <p class="pj-tags">Python  |  LTspice  |  Signal Measurement &amp; Analysis</p>
-        <span class="pj-media"><img src="assets/img/project-chaos-encryption.webp" alt="Simulated signal traces from the chaos-based communication circuit" width="483" height="354" loading="lazy" decoding="async"></span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 06 · Projects Highlights (2/2) -->
-  <section class="page s6" id="projects-2" data-page="6" data-nav="projects" data-sub="Projects Highlights">
-    <div class="page-inner">
-      <a class="card pj pj-3" href="https://digitaltrinketsbyrey.etsy.com/" target="_blank" rel="noopener noreferrer">
-        <span class="pj-media"><img src="assets/img/project-etsy-dashboard.webp" alt="Etsy Shop Manager statistics showing shop visits and orders from June 2025 to October 2026" width="796" height="293" loading="lazy" decoding="async"></span>
-        <span class="pj-num">03.</span>
-        <h3 class="pj-title">Digital Product Entrepreneurship &amp; E-commerce Management</h3>
-        <p class="pj-sub">Online Store | Digital Printables &amp; Graphic Design</p>
-        <p class="pj-desc">I manage an online business selling digital printables and original designs through e-commerce <br class="pdf">platforms such as Shopify and Etsy. <br class="pdf">From creating products and designing listings to managing the online storefront and developing <br class="pdf">the product catalogue, this project combines visual creativity with entrepreneurship, digital <br class="pdf">marketing, and e-commerce management.</p>
-        <p class="pj-tags">Graphic Design  |  E-commerce Management  |  Digital Marketing  |  Entrepreneurship</p>
-      </a>
-      <p class="shop">Visit the shop : <a class="shop-link" href="https://digitaltrinketsbyrey.etsy.com/" target="_blank" rel="noopener noreferrer">digitaltrinketsbyrey.etsy.com</a></p>
-      <h3 class="lessons-title">WHAT IT TAUGHT ME</h3>
-      <ol class="lessons">
-        <li class="card lesson ls-1"><span class="ls-num">01</span><span class="ls-title">Create &amp; Price</span><span class="ls-text">Develop digital products, build attractive <br class="pdf">listings, and set competitive prices.</span></li>
-        <li class="card lesson ls-2"><span class="ls-num">02</span><span class="ls-title">Market</span><span class="ls-text">Promote products strategically to improve <br class="pdf">visibility and attract customers.</span></li>
-        <li class="card lesson ls-3"><span class="ls-num">03</span><span class="ls-title">Learn from Feedback</span><span class="ls-text">Use customer feedback to refine designs <br class="pdf">and improve product quality.</span></li>
+  <!-- Education -->
+  <section class="page" id="education" data-nav="education" data-sub="Education">
+    <header class="intro">
+      <h2 class="intro-title">Education</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">The mathematics and physics training behind my engineering studies.</p>
+    </header>
+    <div class="card edu">
+      <h3 class="edu-kicker">ACADEMIC PATH</h3>
+      <span class="bar edu-bar" aria-hidden="true"></span>
+      <ol class="timeline">
+        <li class="tl">
+          <span class="tl-node" aria-hidden="true"></span>
+          <p class="tl-head"><span class="tl-years">2026 - 2029</span><span class="tl-school">ENSEEIHT  —  SN</span></p>
+          <p class="tl-degree">Bachelor of Engineering  ·  Sciences du Numérique (SN)</p>
+          <p class="tl-place">Toulouse, France  ·  Sep 2026 – Jun 2029</p>
+        </li>
+        <li class="tl">
+          <span class="tl-node" aria-hidden="true"></span>
+          <p class="tl-head"><span class="tl-years">2024 - 2026</span><span class="tl-school">CPGE — Lycée Omar Ibn Al Khattab</span></p>
+          <p class="tl-degree">Undergraduate Preparatory Program · Mathematics and Physics (MPSI / MP)</p>
+          <p class="tl-place">Meknès, Morocco  ·  Sep 2024 – Jun 2026</p>
+        </li>
+        <li class="tl">
+          <span class="tl-node" aria-hidden="true"></span>
+          <p class="tl-head"><span class="tl-years">2021 - 2024</span><span class="tl-school">Flowers High School</span></p>
+          <p class="tl-degree">Scientific Baccalaureate in Mathematics · Engineering Sciences specialization</p>
+          <p class="tl-place">Meknès, Morocco · Sep 2021 – Jun 2024</p>
+        </li>
       </ol>
     </div>
   </section>
 
-  <!-- 07 · International Mobility -->
-  <section class="page s7" id="mobility" data-page="7" data-nav="mobility" data-sub="International Mobility">
-    <div class="page-inner">
-      <div class="card mob mob-plan">
+  <!-- Skills & Expertise -->
+  <section class="page" id="skills" data-nav="skills" data-sub="Skills &amp; Expertise">
+    <header class="intro">
+      <h2 class="intro-title">Skills &amp; Expertise</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">The languages, tools and qualities I bring to engineering and creative work.</p>
+    </header>
+    <div class="skills">
+      <div class="card sk">
+        <h3 class="sk-title">Languages</h3>
+        <span class="sk-rule" aria-hidden="true"></span>
+        <ul class="sk-list">
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-python.png" alt="" width="90" height="90"><span class="sk-n">Python</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-sql.png" alt="" width="62" height="78"><span class="sk-n">SQL</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-ada.png" alt="" width="84" height="40"><span class="sk-n">ADA</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-cpp.png" alt="" width="85" height="94"><span class="sk-n">C++</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-latex.png" alt="" width="63" height="72"><span class="sk-n">LaTeX</span></li>
+        </ul>
+      </div>
+      <div class="card sk">
+        <h3 class="sk-title">Tools, Software &amp; Systems</h3>
+        <span class="sk-rule" aria-hidden="true"></span>
+        <ul class="sk-list">
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-windows.png" alt="" width="71" height="78"><span class="sk-n">Windows</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-linux.png" alt="" width="55" height="59"><span class="sk-n">Linux</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-visualstudio.png" alt="" width="76" height="77"><span class="sk-n">Visual Studio</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-matlab.png" alt="" width="160" height="144"><span class="sk-n">MATLAB</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-numpy.png" alt="" width="107" height="115"><span class="sk-n">NumPy</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-ltspice.png" alt="" width="120" height="70"><span class="sk-n">LTspice</span></li>
+        </ul>
+      </div>
+      <div class="card sk">
+        <h3 class="sk-title">Creative &amp; Entrepreneurial Skills</h3>
+        <span class="sk-rule" aria-hidden="true"></span>
+        <ul class="sk-list">
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-ibispaint.png" alt="" width="60" height="60"><span class="sk-n">Digital design</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-canva.png" alt="" width="138" height="138"><span class="sk-n">Canva</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-capcut.png" alt="" width="147" height="99"><span class="sk-n">Graphic design</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-etsy.png" alt="" width="90" height="90"><span class="sk-n">E-commerce and online sales</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/img/logo-shopify.png" alt="" width="68" height="68"><span class="sk-n">Online Store Management</span></li>
+        </ul>
+      </div>
+      <div class="card sk">
+        <h3 class="sk-title">Soft Skills</h3>
+        <span class="sk-rule" aria-hidden="true"></span>
+        <ul class="sk-list">
+          <li class="sk-i"><img class="sk-ic" src="assets/img/soft-problem.png" alt="" width="49" height="46"><span class="sk-n">Problem-solving</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/svg/soft-adaptability.svg" alt="" width="22" height="17"><span class="sk-n">Adaptability</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/svg/soft-teamwork.svg" alt="" width="28" height="13"><span class="sk-n">Teamwork</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/svg/soft-creativity.svg" alt="" width="20" height="21"><span class="sk-n">Creativity</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/svg/soft-analytical.svg" alt="" width="21" height="20"><span class="sk-n">Analytical thinking</span></li>
+          <li class="sk-i"><img class="sk-ic" src="assets/svg/soft-decision.svg" alt="" width="17" height="29"><span class="sk-n">Decision-making</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Highlights -->
+  <section class="page" id="projects" data-nav="projects" data-sub="Projects Highlights">
+    <header class="intro">
+      <h2 class="intro-title">Projects Highlights</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">A selection of my research projects and the online business I run.</p>
+    </header>
+    <div class="wrap projects">
+      <a class="card pj pj-h" href="https://drive.google.com/file/d/1cJxBrXn3Jck78LgcFZlMsyAfVNfUtnCa/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <div class="pj-body">
+          <span class="pj-num">01.</span>
+          <h3 class="pj-title">Chaotic Systems: Dynamics &amp; Mathematical Analysis</h3>
+          <p class="pj-sub">Nonlinear Dynamics | Research Project</p>
+          <p class="pj-desc">A theoretical and numerical study of chaotic systems, focusing on their nonlinear dynamics, stability, and characteristic behaviours.<br>Using the Chua circuit as a case study, I investigate equilibrium points, bifurcations, sensitivity to initial conditions, and the emergence of chaotic attractors through mathematical analysis and numerical simulation.</p>
+          <p class="pj-tags">Python  |  LTspice  |  Circuit Prototyping |  Experimental Validation</p>
+        </div>
+        <span class="pj-media"><img src="assets/img/project-chaotic-systems.webp" alt="Chua circuit double-scroll chaotic attractor displayed on an oscilloscope" width="603" height="468" loading="lazy" decoding="async"></span>
+      </a>
+      <a class="card pj pj-h" href="https://drive.google.com/file/d/1cJxBrXn3Jck78LgcFZlMsyAfVNfUtnCa/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <div class="pj-body">
+          <span class="pj-num">02.</span>
+          <h3 class="pj-title">Chaos-Based Encryption &amp; Secure Communications</h3>
+          <p class="pj-sub">Signal Synchronization &amp; Communication | Research Project</p>
+          <p class="pj-desc">An exploration of how chaotic dynamics can be leveraged to develop communication systems using synchronized nonlinear oscillators.<br>Through circuit modeling and simulation, I investigate how information can be encoded into chaotic signals and recovered at the receiver, examining synchronization, signal masking, and the influence of parameter mismatch on transmission reliability.</p>
+          <p class="pj-tags">Python  |  LTspice  |  Signal Measurement &amp; Analysis</p>
+        </div>
+        <span class="pj-media"><img src="assets/img/project-chaos-encryption.webp" alt="Simulated signal traces from the chaos-based communication circuit" width="483" height="354" loading="lazy" decoding="async"></span>
+      </a>
+      <div class="pj-row">
+        <div class="pj-main">
+          <a class="card pj pj-v" href="https://digitaltrinketsbyrey.etsy.com/" target="_blank" rel="noopener noreferrer">
+            <span class="pj-media"><img src="assets/img/project-etsy-dashboard.webp" alt="Etsy Shop Manager statistics showing shop visits and orders from June 2025 to October 2026" width="796" height="293" loading="lazy" decoding="async"></span>
+            <div class="pj-body">
+              <span class="pj-num">03.</span>
+              <h3 class="pj-title">Digital Product Entrepreneurship &amp; E-commerce Management</h3>
+              <p class="pj-sub">Online Store | Digital Printables &amp; Graphic Design</p>
+              <p class="pj-desc">I manage an online business selling digital printables and original designs through e-commerce platforms such as Shopify and Etsy.<br>From creating products and designing listings to managing the online storefront and developing the product catalogue, this project combines visual creativity with entrepreneurship, digital marketing, and e-commerce management.</p>
+              <p class="pj-tags">Graphic Design  |  E-commerce Management  |  Digital Marketing  |  Entrepreneurship</p>
+            </div>
+          </a>
+          <p class="shop">Visit the shop : <a class="shop-link" href="https://digitaltrinketsbyrey.etsy.com/" target="_blank" rel="noopener noreferrer">digitaltrinketsbyrey.etsy.com</a></p>
+        </div>
+        <div class="lessons-col">
+          <h4 class="lessons-title">WHAT IT TAUGHT ME</h4>
+          <ol class="lessons">
+            <li class="card lesson"><span class="ls-num">01</span><span class="ls-title">Create &amp; Price</span><span class="ls-text">Develop digital products, build attractive listings, and set competitive prices.</span></li>
+            <li class="card lesson"><span class="ls-num">02</span><span class="ls-title">Market</span><span class="ls-text">Promote products strategically to improve visibility and attract customers.</span></li>
+            <li class="card lesson"><span class="ls-num">03</span><span class="ls-title">Learn from Feedback</span><span class="ls-text">Use customer feedback to refine designs and improve product quality.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- International Mobility -->
+  <section class="page" id="mobility" data-nav="mobility" data-sub="International Mobility">
+    <header class="intro">
+      <h2 class="intro-title">International Mobility</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">Where I plan to study abroad, and the languages I speak.</p>
+    </header>
+    <div class="wrap mobility">
+      <div class="card mob">
         <span class="bar mob-bar" aria-hidden="true"></span>
-        <h2 class="mob-title">International Mobility Plan</h2>
+        <h3 class="mob-title">International Mobility Plan</h3>
         <p class="mob-sub">Expanding Horizons Through Global Education</p>
-        <p class="mob-text">My mobility plan primarily targets the United States, with Georgia Tech (Atlanta) as my preferred destination. <br class="pdf">I am also considering Brazil, particularly the University of São Paulo (USP) and UNICAMP, to broaden my academic and <br class="pdf">international experience.</p>
+        <p class="mob-text">My mobility plan primarily targets the United States, with Georgia Tech (Atlanta) as my preferred destination.<br>I am also considering Brazil, particularly the University of São Paulo (USP) and UNICAMP, to broaden my academic and international experience.</p>
         <p class="mob-tags">International Exchange  |  Research  |  Cultural Diversity  |  Academic Growth</p>
       </div>
-      <div class="card mob mob-lang">
+      <div class="card mob">
         <span class="bar mob-bar" aria-hidden="true"></span>
-        <h2 class="mob-title">Languages</h2>
+        <h3 class="mob-title">Languages</h3>
         <ul class="langs">
-          <li class="lang lang-en">
+          <li class="lang">
             <span class="lang-text">ENGLISH   :   C1 —  Professional Working Proficiency</span>
-            <span class="lang-meter" role="img" aria-label="English level C1"><span class="lang-fill"></span></span>
+            <span class="lang-meter" role="img" aria-label="English level C1"><span class="lang-fill lang-c1"></span></span>
           </li>
-          <li class="lang lang-es">
+          <li class="lang">
             <span class="lang-text">SPANISH   :    B1 —  Intermediate Proficiency</span>
-            <span class="lang-meter" role="img" aria-label="Spanish level B1"><span class="lang-fill"></span></span>
+            <span class="lang-meter" role="img" aria-label="Spanish level B1"><span class="lang-fill lang-b1"></span></span>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 08 · Sustainability & Civic Engagement (1/2) -->
-  <section class="page s8" id="engagement" data-page="8" data-nav="engagement" data-sub="Sustainability &amp; Civic Engagement">
-    <div class="page-inner">
-      <article class="card eg eg-l">
+  <!-- Sustainability & Civic Engagement -->
+  <section class="page" id="engagement" data-nav="engagement" data-sub="Sustainability &amp; Civic Engagement">
+    <header class="intro">
+      <h2 class="intro-title">Sustainability &amp; Civic Engagement</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">Events and workshops I’ve taken part in for health, the environment and equality.</p>
+    </header>
+    <div class="wrap eg-grid">
+      <article class="card eg">
         <a class="eg-media" href="https://futurs-proches.univ-toulouse.fr/events/course-en-faveur-de-la-sensibilisation-et-lutte-contre-le-cancer-du-sein-avec-lalliance-sport-sante/" target="_blank" rel="noopener noreferrer" aria-label="Pink October Run on the Futurs Proches website (opens in a new tab)"><img src="assets/img/engagement-pink-october.webp" alt="Runners in pink T-shirts taking part in the Pink October Run" width="598" height="326" loading="lazy" decoding="async"></a>
-        <h3 class="eg-title">Pink October Run</h3>
-        <span class="bar eg-bar" aria-hidden="true"></span>
-        <p class="eg-text">I took part in the Pink October Run during the <br class="pdf"><em>Futurs Proches</em> festival, alongside Alliance Sport-<br class="pdf nb">Santé, supporting breast cancer awareness and <br class="pdf">prevention through sport and community <br class="pdf">engagement.</p>
+        <div class="eg-body">
+          <h3 class="eg-title">Pink October Run</h3>
+          <span class="bar eg-bar" aria-hidden="true"></span>
+          <p class="eg-text">I took part in the Pink October Run during the <em>Futurs Proches</em> festival, alongside Alliance Sport-Santé, supporting breast cancer awareness and prevention through sport and community engagement.</p>
+        </div>
       </article>
-      <article class="card eg eg-r">
+      <article class="card eg">
         <span class="eg-media"><img src="assets/img/engagement-climate-fresk.webp" alt="Students placing and annotating cards during a Climate Fresk workshop" width="799" height="436" loading="lazy" decoding="async"></span>
-        <h3 class="eg-title">Climate Fresk</h3>
-        <span class="bar eg-bar" aria-hidden="true"></span>
-        <p class="eg-text">During my first year at <em>ENSEEIHT</em>, I joined a <br class="pdf">Climate Fresk workshop with fellow students to <br class="pdf">explore climate change and reflect on our <br class="pdf">responsibilities as future engineers in building a <br class="pdf">more sustainable world.</p>
+        <div class="eg-body">
+          <h3 class="eg-title">Climate Fresk</h3>
+          <span class="bar eg-bar" aria-hidden="true"></span>
+          <p class="eg-text">During my first year at <em>ENSEEIHT</em>, I joined a Climate Fresk workshop with fellow students to explore climate change and reflect on our responsibilities as future engineers in building a more sustainable world.</p>
+        </div>
       </article>
-    </div>
-  </section>
-
-  <!-- 09 · Sustainability & Civic Engagement (2/2) -->
-  <section class="page s9" id="engagement-2" data-page="9" data-nav="engagement" data-sub="Sustainability &amp; Civic Engagement">
-    <div class="page-inner">
-      <article class="card eg eg-l">
+      <article class="card eg">
         <a class="eg-media" href="https://futurs-proches.univ-toulouse.fr/events/clean-walk-dechets-et-megots/" target="_blank" rel="noopener noreferrer" aria-label="Clean Walk on the Futurs Proches website (opens in a new tab)"><img src="assets/img/engagement-clean-walk.webp" alt="Volunteers with gloves and bags collecting litter during a Clean Walk" width="596" height="325" loading="lazy" decoding="async"></a>
-        <h3 class="eg-title">Clean Walk</h3>
-        <span class="bar eg-bar" aria-hidden="true"></span>
-        <p class="eg-text">I took part in a Clean Walk during the <em>Futurs</em> <br class="pdf"><em>Proches</em> festival, helping collect litter and <br class="pdf">cigarette butts across Toulouse’s university <br class="pdf">campus while promoting responsible waste <br class="pdf">management and environmental awareness.</p>
+        <div class="eg-body">
+          <h3 class="eg-title">Clean Walk</h3>
+          <span class="bar eg-bar" aria-hidden="true"></span>
+          <p class="eg-text">I took part in a Clean Walk during the <em>Futurs Proches</em> festival, helping collect litter and cigarette butts across Toulouse’s university campus while promoting responsible waste management and environmental awareness.</p>
+        </div>
       </article>
-      <article class="card eg eg-r">
+      <article class="card eg">
         <span class="eg-media"><img src="assets/img/engagement-gbv.webp" alt="Poster reading “Ensemble contre les violences sexistes et sexuelles”" width="799" height="436" loading="lazy" decoding="async"></span>
-        <h3 class="eg-title">Gender-Based Violence Awareness</h3>
-        <span class="bar eg-bar" aria-hidden="true"></span>
-        <p class="eg-text">My time at <em>ENSEEIHT</em> included taking part in The <br class="pdf">Trial of King Kong, an immersive theatre <br class="pdf">experience addressing harmful behaviours, <br class="pdf">power dynamics, and their impact on individuals, <br class="pdf">alongside a range of educational events.</p>
+        <div class="eg-body">
+          <h3 class="eg-title">Gender-Based Violence Awareness</h3>
+          <span class="bar eg-bar" aria-hidden="true"></span>
+          <p class="eg-text">My time at <em>ENSEEIHT</em> included taking part in The Trial of King Kong, an immersive theatre experience addressing harmful behaviours, power dynamics, and their impact on individuals, alongside a range of educational events.</p>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- 10 · Sport & other activities -->
-  <section class="page s10" id="activities" data-page="10" data-nav="activities" data-sub="Sport &amp; other activities">
-    <div class="page-inner">
-      <article class="card act act-1">
-        <h2 class="act-title">Running &amp; Endurance</h2>
+  <!-- Sport & other activities -->
+  <section class="page" id="activities" data-nav="activities" data-sub="Sport &amp; other activities">
+    <header class="intro">
+      <h2 class="intro-title">Sport &amp; other activities</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">What keeps me active and creative outside my studies.</p>
+    </header>
+    <div class="wrap acts">
+      <article class="card act">
+        <h3 class="act-title">Running &amp; Endurance</h3>
         <span class="bar act-bar" aria-hidden="true"></span>
-        <p class="act-text">Running is a way for me to challenge myself, maintain an active lifestyle, and develop discipline and perseverance with <br class="pdf">every step.</p>
+        <p class="act-text">Running is a way for me to challenge myself, maintain an active lifestyle, and develop discipline and perseverance with every step.</p>
       </article>
-      <article class="card act act-2">
-        <h2 class="act-title">Volleyball &amp; Team Spirit</h2>
+      <article class="card act">
+        <h3 class="act-title">Volleyball &amp; Team Spirit</h3>
         <span class="bar act-bar" aria-hidden="true"></span>
-        <p class="act-text">I enjoy playing volleyball, where teamwork, communication, and adaptability come together to create a shared sense <br class="pdf">of achievement.</p>
+        <p class="act-text">I enjoy playing volleyball, where teamwork, communication, and adaptability come together to create a shared sense of achievement.</p>
       </article>
-      <article class="card act act-3">
-        <h2 class="act-title">Portrait Art &amp; Digital Design</h2>
+      <article class="card act">
+        <h3 class="act-title">Portrait Art &amp; Digital Design</h3>
         <span class="bar act-bar" aria-hidden="true"></span>
-        <p class="act-text">As a professional artist and digital designer, I create portraits and original digital artwork, combining artistic expression <br class="pdf">with technical precision to bring ideas and personalities to life.</p>
+        <p class="act-text">As a professional artist and digital designer, I create portraits and original digital artwork, combining artistic expression with technical precision to bring ideas and personalities to life.</p>
       </article>
     </div>
   </section>
 
-  <!-- 11 · Contact -->
-  <section class="page s11" id="contact" data-page="11" data-nav="contact" data-sub="Contact">
-    <div class="page-inner">
-      <div class="contact-wrap">
-        <h2 class="ct-title">Get in Touch</h2>
-        <p class="ct-text">Open to new opportunities, creative collaborations, or a good <br class="pdf">conversation.</p>
-        <div class="card ct ct-1">
-          <img class="ct-icon" src="assets/img/contact-linkedin.png" alt="" width="222" height="222">
-          <h3 class="ct-label">LinkedIn</h3>
-          <a class="ct-link" href="https://www.linkedin.com/in/mohamed-yassir-mezzat-50272a440" target="_blank" rel="noopener noreferrer">My LinkedIn Profile <svg class="i-arrow" aria-hidden="true" focusable="false" viewBox="0 0 7.06 7.05"><path fill="currentColor" d="M0.87 7.05 0 6.18 5.08 1.11 0.31 1.08 1.42 0 6.93 0.12 7.06 5.64 5.96 6.73 5.94 1.98Z"/></svg></a>
-        </div>
-        <div class="card ct ct-2">
-          <img class="ct-icon" src="assets/svg/contact-email.svg" alt="" width="90" height="90">
-          <h3 class="ct-label">Email</h3>
-          <a class="ct-link" href="mailto:mezzatyassir@gmail.com">mezzatyassir@gmail.com <svg class="i-arrow" aria-hidden="true" focusable="false" viewBox="0 0 7.06 7.05"><path fill="currentColor" d="M0.87 7.05 0 6.18 5.08 1.11 0.31 1.08 1.42 0 6.93 0.12 7.06 5.64 5.96 6.73 5.94 1.98Z"/></svg></a>
-        </div>
-        <div class="card ct ct-3">
-          <img class="ct-icon" src="assets/svg/contact-phone.svg" alt="" width="90" height="90">
-          <h3 class="ct-label">Phone</h3>
-          <a class="ct-link" href="tel:+33758274088">07 58 27 40 88</a>
-        </div>
+  <!-- Contact -->
+  <section class="page contact-page" id="contact" data-nav="contact" data-sub="Contact">
+    <header class="intro">
+      <h2 class="intro-title">Get in Touch</h2>
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p class="intro-text">Open to new opportunities, creative collaborations, or a good conversation.</p>
+    </header>
+    <div class="contacts">
+      <div class="card ct">
+        <img class="ct-icon ct-in" src="assets/img/contact-linkedin.png" alt="" width="222" height="222">
+        <h3 class="ct-label">LinkedIn</h3>
+        <a class="ct-link" href="https://www.linkedin.com/in/mohamed-yassir-mezzat-50272a440" target="_blank" rel="noopener noreferrer">My LinkedIn Profile <svg class="i-arrow" aria-hidden="true" focusable="false" viewBox="0 0 7.06 7.05"><path fill="currentColor" d="M0.87 7.05 0 6.18 5.08 1.11 0.31 1.08 1.42 0 6.93 0.12 7.06 5.64 5.96 6.73 5.94 1.98Z"/></svg></a>
+      </div>
+      <div class="card ct">
+        <img class="ct-icon" src="assets/svg/contact-email.svg" alt="" width="90" height="90">
+        <h3 class="ct-label">Email</h3>
+        <a class="ct-link" href="mailto:mezzatyassir@gmail.com">mezzatyassir@gmail.com <svg class="i-arrow" aria-hidden="true" focusable="false" viewBox="0 0 7.06 7.05"><path fill="currentColor" d="M0.87 7.05 0 6.18 5.08 1.11 0.31 1.08 1.42 0 6.93 0.12 7.06 5.64 5.96 6.73 5.94 1.98Z"/></svg></a>
+      </div>
+      <div class="card ct">
+        <img class="ct-icon" src="assets/svg/contact-phone.svg" alt="" width="90" height="90">
+        <h3 class="ct-label">Phone</h3>
+        <a class="ct-link" href="tel:+33758274088">07 58 27 40 88</a>
       </div>
     </div>
   </section>
