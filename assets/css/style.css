@@ -118,7 +118,7 @@ button{font:inherit;color:inherit}
 .sk-title{color:var(--ink-faint)}
 .pj-tags,.mob-tags,.shop,.ct-link{color:var(--accent-2)}
 .lang-text{color:#fff}
-.bar,.h-bar,.intro-bar{display:block;background:var(--accent)}
+.bar,.h-bar{display:block;background:var(--accent)}
 
 /* ------------------------------------------------------------------ shared components */
 .card{background:var(--card);border:calc(2.1 * var(--u)) solid var(--card-line);box-shadow:var(--glow)}
@@ -264,8 +264,7 @@ button{font:inherit;color:inherit}
   /* ---- section intros ---- */
   .intro{width:calc(900 * var(--u));margin:0 auto calc(46 * var(--u));text-align:center}
   .intro-title{font-size:calc(48 * var(--u));line-height:1.1}
-  .intro-bar{width:calc(54 * var(--u));height:calc(3.8 * var(--u));margin:calc(14 * var(--u)) auto 0}
-  .intro-text{margin-top:calc(16 * var(--u));font-size:calc(20 * var(--u));line-height:1.5}
+  .intro-text{margin-top:calc(12 * var(--u));font-size:calc(20 * var(--u));line-height:1.5}
 
   /* ---- welcome: video left, Who I Am right, buttons below ---- */
   .welcome-page{padding-top:calc(36 * var(--u))}
@@ -446,8 +445,7 @@ button{font:inherit;color:inherit}
 
   .intro{text-align:center;margin:0 auto 26px;max-width:560px}
   .intro-title{font-size:clamp(32px,8.4vw,42px);line-height:1.12}
-  .intro-bar{width:46px;height:3.2px;margin:12px auto 0}
-  .intro-text{margin-top:12px;font-size:16px;line-height:1.5}
+  .intro-text{margin-top:10px;font-size:16px;line-height:1.5}
 
   .welcome{display:flex;flex-direction:column;gap:40px}
   .w-about{order:-1}
