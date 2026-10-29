@@ -14,6 +14,7 @@ hovering it slides it out with the section names, and clicking an icon jumps to 
 | `assets/js/main.js` | Tabs, smooth scrolling, sticky header, mobile menu, video button |
 | `assets/img/`, `assets/svg/` | Photos, logos and icons taken from the design |
 | `assets/video/` | The "A little more about me" video |
+| `assets/docs/` | The CV (French) and resume (English) PDFs opened by the buttons on the welcome screen |
 | `assets/fonts/` | Free web fonts standing in for Aptos (Hanken Grotesk), The Seasons (Newsreader) and Times New Roman MT Pro (Tinos) |
 
 ## The video (section "A little more about me")
@@ -26,9 +27,13 @@ GitHub's 100 MB file limit).
 
 ## CV and Resume buttons
 
-The "CV (Français)" and "Resume (English)" buttons on the welcome screen are greyed out until the files exist.
-To switch one on, add the PDF to `assets/docs/` and, in `index.html`, replace its `<button class="btn" type="button" disabled>`
-… `</button>` with `<a class="btn" href="assets/docs/YOUR-FILE.pdf" target="_blank" rel="noopener">` … `</a>`
-(keep the icon and label inside).
+The "CV (Français)" and "Resume (English)" buttons on the welcome screen open the PDFs in `assets/docs/`
+in a new tab:
+
+- `assets/docs/CV_Mohamed_Yassir_Mezzat_FR.pdf` (French CV)
+- `assets/docs/Resume_Mohamed_Yassir_Mezzat_EN.pdf` (English resume)
+
+To update a resume, replace its PDF with a new one under the same file name. If the file name changes,
+also change the matching `href` in `index.html`.
 
 Pushing to the `main` branch republishes the site within a minute or two.

@@ -156,9 +156,7 @@ button{font:inherit;color:inherit}
   transition:border-color .25s ease,background-color .25s ease,transform .3s var(--ease),box-shadow .3s ease}
 .btn svg{flex:none;fill:var(--accent)}
 .btn-in{flex:none}
-.btn:not(:disabled):hover{border-color:#5d4686;background:#221539;box-shadow:var(--glow-strong)}
-.btn:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}
-.btn:disabled svg{fill:var(--ink-muted)}
+.btn:hover{border-color:#5d4686;background:#221539;box-shadow:var(--glow-strong)}
 
 /* video: plain white triangle centred on the video starts it; native controls take over */
 .video-frame{display:block;position:relative;overflow:hidden;isolation:isolate}
@@ -282,7 +280,7 @@ button{font:inherit;color:inherit}
   .btn{gap:calc(12 * var(--u));height:calc(52 * var(--u));padding:0 calc(28 * var(--u)) 0 calc(24 * var(--u));border-radius:calc(26 * var(--u));font-size:calc(16.5 * var(--u))}
   .btn svg{width:calc(15.4 * var(--u));height:calc(19.2 * var(--u))}
   .btn-in{width:calc(30 * var(--u));height:calc(30 * var(--u));margin:0 calc(-2 * var(--u)) 0 calc(-6 * var(--u))}
-  .btn:not(:disabled):hover{transform:translateY(calc(-2 * var(--u)))}
+  .btn:hover{transform:translateY(calc(-2 * var(--u)))}
 
   /* ---- education ---- */
   .edu{position:relative;width:calc(856 * var(--u));margin:0 auto;border-radius:calc(92.5 * var(--u));padding:calc(26 * var(--u)) calc(60 * var(--u)) calc(80.6 * var(--u)) calc(58 * var(--u))}
