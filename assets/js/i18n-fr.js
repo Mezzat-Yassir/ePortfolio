@@ -1,7 +1,7 @@
 /* Mohamed Yassir Mezzat — ePortfolio
    French text for the EN / FR switch. Each key matches a data-i18n (text) or data-i18n-attr (attribute)
    key in index.html; the English text stays in index.html itself.
-     is a no-break space (French spacing before : ? and inside « »). */
+   French spacing: a no-break space (U+00A0) goes before : and ? and inside « ». */
 window.EPF_FR = {
   /* page */
   "meta.description": "Mohamed Yassir Mezzat — élève ingénieur à l’ENSEEIHT, Toulouse. Un aperçu de mon parcours académique, de mes projets, de mes compétences et des idées que j’aime explorer.",
