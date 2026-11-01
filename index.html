@@ -29,14 +29,11 @@ try{var q=/[?&]lang=(en|fr)\b/.exec(location.search),l=q?q[1]:localStorage.getIt
 <!-- Mobile top bar -->
 <div class="mbar">
   <a class="mbar-brand" href="#home" data-nav-link="home" aria-label="Back to top" data-i18n-attr="aria-label:a.top">MY</a>
-  <div class="lang-switch mbar-lang" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
-    <button class="lang-opt" type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
-    <button class="lang-opt" type="button" data-set-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
-  </div>
   <div class="mbar-title">
     <span class="mbar-name">Mohamed Yassir <span class="accent">Mezzat</span></span>
     <span class="mbar-sub" data-subtitle></span>
   </div>
+  <button class="lang-btn mbar-lang" type="button" data-toggle-lang lang="fr" aria-label="Voir le site en français" title="Voir le site en français">FR</button>
   <button class="mbar-menu" type="button" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -49,11 +46,6 @@ try{var q=/[?&]lang=(en|fr)\b/.exec(location.search),l=q?q[1]:localStorage.getIt
     <span class="brand-name">MEZZAT<br>MOHAMED<br>YASSIR</span>
   </a>
   <span class="brand-rule" aria-hidden="true"></span>
-  <!-- Language switch: English / French (see assets/js/i18n-fr.js for the French text) -->
-  <div class="lang-switch side-lang" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
-    <button class="lang-opt" type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
-    <button class="lang-opt" type="button" data-set-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
-  </div>
   <nav class="nav" aria-label="Sections">
     <span class="nav-indicator" aria-hidden="true"></span>
     <a class="nav-item n-home" href="#home" data-nav-link="home"><span class="nav-icon"><svg class="i-nav-home" aria-hidden="true" focusable="false" viewBox="0 0 12.30 13.31"><path fill="currentColor" d="M0 13.32V5.08L6.15 0L12.29 5.08V13.32ZM1.2 12.13H11.13V5.75L6.15 1.6L1.2 5.75Z"/></svg></span><span class="nav-label" data-i18n="nav.home">Home</span></a>
@@ -70,6 +62,8 @@ try{var q=/[?&]lang=(en|fr)\b/.exec(location.search),l=q?q[1]:localStorage.getIt
 
 <!-- Header: full on the welcome screen, condenses into a sticky bar while scrolling -->
 <header class="topbar">
+  <!-- Language: one button in the top-right corner; it shows the other language (French text: assets/js/i18n-fr.js) -->
+  <button class="lang-btn top-lang" type="button" data-toggle-lang lang="fr" aria-label="Voir le site en français" title="Voir le site en français">FR</button>
   <div class="topbar-inner">
     <p class="h-eyebrow">MOHAMED YASSIR MEZZAT - ePortfolio</p>
     <h1 class="h-name"><span class="h-first">Mohamed Yassir</span> <span class="h-last">Mezzat</span></h1>

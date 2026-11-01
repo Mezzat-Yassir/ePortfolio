@@ -1,5 +1,5 @@
 /* Mohamed Yassir Mezzat — ePortfolio
-   French text for the EN / FR switch. Each key matches a data-i18n (text) or data-i18n-attr (attribute)
+   French text for the language button (top right). Each key matches a data-i18n (text) or data-i18n-attr (attribute)
    key in index.html; the English text stays in index.html itself.
    French spacing: a no-break space (U+00A0) goes before : and ? and inside « ». */
 window.EPF_FR = {
@@ -9,7 +9,6 @@ window.EPF_FR = {
   "menu.close": "Fermer le menu",
   "skip": "Aller au contenu",
   "a.top": "Retour en haut",
-  "a.lang": "Langue",
   "a.sitenav": "Navigation du site",
   "a.brand": "Mohamed Yassir Mezzat — retour en haut",
 

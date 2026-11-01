@@ -32,7 +32,7 @@
   var metaDesc = document.querySelector('meta[name="description"]');
   var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
   var attrEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-attr]'));
-  var langButtons = Array.prototype.slice.call(document.querySelectorAll('[data-set-lang]'));
+  var langButtons = Array.prototype.slice.call(document.querySelectorAll('[data-toggle-lang]'));
   var EN = { 'menu.open': 'Open menu', 'menu.close': 'Close menu',
              'meta.description': metaDesc ? metaDesc.getAttribute('content') : '' };
 
@@ -58,7 +58,15 @@
       attrPairs(el).forEach(function (p) { var v = t(p[1]); if (v != null) el.setAttribute(p[0], v); });
     });
     if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
-    langButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang)); });
+    // the button offers the other language, labelled in that language
+    var other = lang === 'fr' ? 'en' : 'fr';
+    var hint = other === 'fr' ? 'Voir le site en français' : 'View the site in English';
+    langButtons.forEach(function (b) {
+      b.textContent = other.toUpperCase();
+      b.setAttribute('lang', other);
+      b.setAttribute('aria-label', hint);
+      b.setAttribute('title', hint);
+    });
     if (menuBtn) menuBtn.setAttribute('aria-label', t(body.classList.contains('menu-open') ? 'menu.close' : 'menu.open'));
     if (remember) { try { localStorage.setItem(LANG_KEY, lang); } catch (err) { /* private mode */ } }
     root.classList.remove('i18n-pending');
@@ -208,14 +216,10 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   desktopMQ.addEventListener('change', function () { closeMenu(); refresh(); });
 
-  /* ---------- EN / FR switch ---------- */
+  /* ---------- language button (top right): one click switches to the other language ---------- */
   langButtons.forEach(function (b) {
-    b.addEventListener('click', function (e) {
-      var next = b.getAttribute('data-set-lang');
-      // a mouse click shouldn't leave focus inside the sidebar (it would keep it slid out)
-      if (e.detail > 0 && b.closest('.sidebar')) b.blur();
-      if (next === lang) return;
-      applyLang(next, true);
+    b.addEventListener('click', function () {
+      applyLang(lang === 'fr' ? 'en' : 'fr', true);
       refresh();
     });
   });
